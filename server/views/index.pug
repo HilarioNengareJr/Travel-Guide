@@ -1,0 +1,495 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Tour Guide
+
+    // Favicon
+    link(rel="shortcut icon", href="../public/favicon.svg", type="image/svg+xml")
+
+    // Custom CSS link
+    link(rel="stylesheet", href="../public/stylesheets/style.css")
+
+    // Google Font link
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap", rel="stylesheet")
+
+  body#top
+
+    // HEADER
+    header.header(data-header)
+
+      .overlay(data-overlay)
+
+      .header-top
+        .container
+
+          a.helpline-box(href="tel:+905338502322")
+
+            .icon-box
+              ion-icon(name="call-outline")
+
+            .wrapper
+              p.helpline-title For Further Inquires :
+              p.helpline-number +905338502322
+
+          a.logo(href="#")
+            img(src="./assets/images/logo.svg", alt="Tour Guide logo")
+
+          .header-btn-group
+
+            button.search-btn(aria-label="Search")
+              ion-icon(name="search")
+
+            button.nav-open-btn(aria-label="Open Menu", data-nav-open-btn)
+              ion-icon(name="menu-outline")
+
+      .header-bottom
+        .container
+
+          ul.social-list
+
+            li
+              a.social-link(href="#")
+                ion-icon(name="logo-facebook")
+
+            li
+              a.social-link(href="#")
+                ion-icon(name="logo-twitter")
+
+            li
+              a.social-link(href="#")
+                ion-icon(name="logo-youtube")
+
+          nav.navbar(data-navbar)
+
+            .navbar-top
+
+              a.logo(href="#")
+                img(src="./assets/images/logo-blue.svg", alt="Tour Guide logo")
+
+              button.nav-close-btn(aria-label="Close Menu", data-nav-close-btn)
+                ion-icon(name="close-outline")
+
+            ul.navbar-list
+
+              li
+                a.navbar-link(href="#home", data-nav-link) home
+
+              li
+                a.navbar-link(href="#", data-nav-link) about us
+
+              li
+                a.navbar-link(href="#destination", data-nav-link) destination
+
+              li
+                a.navbar-link(href="#package", data-nav-link) packages
+
+              li
+                a.navbar-link(href="#gallery", data-nav-link) gallery
+
+              li
+                a.navbar-link(href="#contact", data-nav-link) contact us
+
+          button.btn.btn-primary Book Now
+
+    // MAIN CONTENT
+    main
+      article
+
+        // HERO SECTION
+        section.hero#home
+          .container
+
+            h2.h1.hero-title Journey to explore world
+
+            p.hero-text Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit class corporis nostra rem quos voluptatibus habitant? Fames, vivamus minim nemo enim, gravida lobortis quasi, eum.
+
+            .btn-group
+              button.btn.btn-primary Learn more
+              button.btn.btn-secondary Book now
+
+        // TOUR SEARCH SECTION
+        section.tour-search
+          .container
+
+            form.tour-search-form(action="")
+
+              .input-wrapper
+                label.input-label(for="destination") Search Destination*
+                input(type="text", name="destination", id="destination", required, placeholder="Enter Destination", class="input-field")
+
+              .input-wrapper
+                label.input-label(for="people") Pax Number*
+                input(type="number", name="people", id="people", required, placeholder="No.of People", class="input-field")
+
+              .input-wrapper
+                label.input-label(for="checkin") Checkin Date**
+                input(type="date", name="checkin", id="checkin", required, class="input-field")
+
+              .input-wrapper
+                label.input-label(for="checkout") Checkout Date*
+                input(type="date", name="checkout", id="checkout", required, class="input-field")
+
+              button.btn.btn-secondary(type="submit") Inquire now
+
+        // POPULAR DESTINATION SECTION
+        section.popular#destination
+          .container
+
+            p.section-subtitle Uncover place
+
+            h2.h2.section-title Popular destination
+
+            p.section-text Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
+
+            ul.popular-list
+
+              li
+                .popular-card
+
+                  figure.card-img
+                    img(src="./assets/images/popular-1.jpg", alt="San miguel, italy", loading="lazy")
+
+                  .card-content
+
+                    .card-rating
+                      ion-icon(name="star")
+                      ion-icon(name="star")
+                      ion-icon(name="star")
+                      ion-icon(name="star")
+                      ion-icon(name="star")
+
+                    p.card-subtitle
+                      a(href="#") Italy
+
+                    h3.h3.card-title
+                      a(href="#") San miguel
+
+                    p.card-text Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+
+              li
+                .popular-card
+
+                  figure.card-img
+                    img(src="./assets/images/popular-2.jpg", alt="Burj khalifa, dubai", loading="lazy")
+
+                  .card-content
+
+                    .card-rating
+                      ion-icon(name="star")
+                      ion-icon(name="star")
+                      ion-icon(name="star")
+                      ion-icon(name="star")
+                      ion-icon(name="star")
+
+                    p.card-subtitle
+                      a(href="#") Dubai
+
+                    h3.h3.card-title
+                      a(href="#") Burj khalifa
+
+                    p.card-text Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+
+              li
+                .popular-card
+
+                  figure.card-img
+                    img(src="./assets/images/popular-3.jpg", alt="Kyoto temple, japan", loading="lazy")
+
+                  .card-content
+
+                    .card-rating
+                      ion-icon(name="star")
+                      ion-icon(name="star")
+                      ion-icon(name="star")
+                      ion-icon(name="star")
+                      ion-icon(name="star")
+
+                    p.card-subtitle
+                      a(href="#") Japan
+
+                    h3.h3.card-title
+                      a(href="#") Kyoto temple
+
+                    p.card-text Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+
+            button.btn.btn-primary More destintion
+
+        // PACKAGE SECTION
+        section.package#package
+          .container
+
+            p.section-subtitle Popular Packeges
+
+            h2.h2.section-title Checkout Our Packeges
+
+            p.section-text Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
+
+            ul.package-list
+
+              li
+                .package-card
+
+                  figure.card-banner
+                    img(src="./assets/images/packege-1.jpg", alt="Experience The Great Holiday On Beach", loading="lazy")
+
+                  .card-content
+
+                    h3.h3.card-title Experience The Great Holiday On Beach
+
+                    p.card-text Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque, cras, aspernatur.
+
+                    ul.card-meta-list
+
+                      li.card-meta-item
+                        .meta-box
+                          ion-icon(name="time")
+                          p.text 7D/6N
+
+                      li.card-meta-item
+                        .meta-box
+                          ion-icon(name="people")
+                          p.text pax: 10
+
+                      li.card-meta-item
+                        .meta-box
+                          ion-icon(name="location")
+                          p.text Malaysia
+
+                  .card-price
+
+                    .wrapper
+
+                      p.reviews (25 reviews)
+
+                      .card-rating
+                        ion-icon(name="star")
+                        ion-icon(name="star")
+                        ion-icon(name="star")
+                        ion-icon(name="star")
+                        ion-icon(name="star")
+
+                    p.price $750
+                      span / per person
+
+                    button.btn.btn-secondary Book Now
+
+              li
+                .package-card
+
+                  figure.card-banner
+                    img(src="./assets/images/packege-2.jpg", alt="Summer Holiday To The Oxolotan River", loading="lazy")
+
+                  .card-content
+
+                    h3.h3.card-title Summer Holiday To The Oxolotan River
+
+                    p.card-text Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque, cras, aspernatur.
+
+                    ul.card-meta-list
+
+                      li.card-meta-item
+                        .meta-box
+                          ion-icon(name="time")
+                          p.text 7D/6N
+
+                      li.card-meta-item
+                        .meta-box
+                          ion-icon(name="people")
+                          p.text pax: 10
+
+                      li.card-meta-item
+                        .meta-box
+                          ion-icon(name="location")
+                          p.text Malaysia
+
+                  .card-price
+
+                    .wrapper
+
+                      p.reviews (20 reviews)
+
+                      .card-rating
+                        ion-icon(name="star")
+                        ion-icon(name="star")
+                        ion-icon(name="star")
+                        ion-icon(name="star")
+                        ion-icon(name="star")
+
+                    p.price $520
+                      span / per person
+
+                    button.btn.btn-secondary Book Now
+
+              li
+                .package-card
+
+                  figure.card-banner
+                    img(src="./assets/images/packege-3.jpg", alt="Santorini Island's Weekend Vacation", loading="lazy")
+
+                  .card-content
+
+                    h3.h3.card-title Santorini Island's Weekend Vacation
+
+                    p.card-text Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque, cras, aspernatur.
+
+                    ul.card-meta-list
+
+                      li.card-meta-item
+                        .meta-box
+                          ion-icon(name="time")
+                          p.text 7D/6N
+
+                      li.card-meta-item
+                        .meta-box
+                          ion-icon(name="people")
+                          p.text pax: 10
+
+                      li.card-meta-item
+                        .meta-box
+                          ion-icon(name="location")
+                          p.text Malaysia
+
+                  .card-price
+
+                    .wrapper
+
+                      p.reviews (40 reviews)
+
+                      .card-rating
+                        ion-icon(name="star")
+                        ion-icon(name="star")
+                        ion-icon(name="star")
+                        ion-icon(name="star")
+                        ion-icon(name="star")
+
+                    p.price $660
+                      span / per person
+
+                    button.btn.btn-secondary Book Now
+
+            button.btn.btn-primary View All Packages
+
+        // GALLERY SECTION
+        section.gallery#gallery
+          .container
+
+            p.section-subtitle Photo Gallery
+
+            h2.h2.section-title Photo's From Travellers
+
+            p.section-text Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
+
+            ul.gallery-list
+
+              li.gallery-item
+                figure.gallery-image
+                  img(src="./assets/images/gallery-1.jpg", alt="Gallery image")
+
+              li.gallery-item
+                figure.gallery-image
+                  img(src="./assets/images/gallery-2.jpg", alt="Gallery image")
+
+              li.gallery-item
+                figure.gallery-image
+                  img(src="./assets/images/gallery-3.jpg", alt="Gallery image")
+
+              li.gallery-item
+                figure.gallery-image
+                  img(src="./assets/images/gallery-4.jpg", alt="Gallery image")
+
+              li.gallery-item
+                figure.gallery-image
+                  img(src="./assets/images/gallery-5.jpg", alt="Gallery image")
+
+        // CALL TO ACTION SECTION
+        section.cta#contact
+          .container
+
+            .cta-content
+              p.section-subtitle Call To Action
+
+              h2.h2.section-title Ready For Unforgatable Travel. Remember Us!
+
+              p.section-text Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
+
+            button.btn.btn-secondary Contact Us !
+
+    // FOOTER
+    footer.footer
+
+      .footer-top
+        .container
+
+          .footer-brand
+
+            a.logo(href="#")
+              img(src="./assets/images/logo.svg", alt="Tour Guide logo")
+
+            p.footer-text Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium magna conubia at perferendis, pretium, aenean aut ultrices.
+
+          .footer-contact
+
+            h4.contact-title Contact Us
+
+            p.contact-text Feel free to contact and reach us !!
+
+            ul
+
+              li.contact-item
+                ion-icon(name="call-outline")
+
+                a.contact-link(href="tel:+905338502322") +905338502322
+
+              li.contact-item
+                ion-icon(name="mail-outline")
+
+                a.contact-link(href="mailto:infotourguide@gmail.com") infotourguide@gmail.com
+
+              li.contact-item
+                ion-icon(name="location-outline")
+
+                address 3146 Kantara, Cyprus
+
+          .footer-form
+
+            p.form-text Subscribe our newsletter for more update & news !!
+
+            form.form-wrapper(action="")
+
+              input(type="email", name="email", class="input-field", placeholder="Enter Your Email", required)
+
+              button.btn.btn-secondary(type="submit") Subscribe
+
+      .footer-bottom
+        .container
+
+          p.copyright &copy; 2023
+            a(href="") Hilario J. Nengare. All rights reserved
+
+          ul.footer-bottom-list
+
+            li
+              a.footer-bottom-link(href="#") Privacy Policy
+
+            li
+              a.footer-bottom-link(href="#") Term & Condition
+
+            li
+              a.footer-bottom-link(href="#") FAQ
+
+  // GO TO TOP BUTTON
+  a.go-top(href="#top", data-go-top)
+    ion-icon(name="chevron-up-outline")
+
+  // Custom JS link
+  script(src="./assets/js/script.js")
+
+  // Ionicon link
+  script(type="module", src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js")
+  script(nomodule, src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js")
