@@ -37,13 +37,7 @@ html(lang="en")
               p.helpline-title For Further Inquires :
               p.helpline-number +905338502322
 
-          a.logo(href="#")
-            img(src="logo.svg", alt="Tour Guide logo")
-
           .header-btn-group
-
-            button.search-btn(aria-label="Search")
-              ion-icon(name="search")
 
             button.nav-open-btn(aria-label="Open Menu", data-nav-open-btn)
               ion-icon(name="menu-outline")
@@ -69,8 +63,7 @@ html(lang="en")
 
             .navbar-top
 
-              a.logo(href="#") 
-                span TOUR
+              a.logo(href="#")
                 img(src="logo.svg", alt="Tour Guide logo")
 
               button.nav-close-btn(aria-label="Close Menu", data-nav-close-btn)
@@ -82,16 +75,13 @@ html(lang="en")
                 a.navbar-link(href="#home", data-nav-link) home
 
               li
-                a.navbar-link(href="#", data-nav-link) about us
-
-              li
                 a.navbar-link(href="#destination", data-nav-link) destination
 
               li
-                a.navbar-link(href="#package", data-nav-link) packages
+                a.navbar-link(href="#gallery", data-nav-link) gallery
 
               li
-                a.navbar-link(href="#gallery", data-nav-link) gallery
+                a.navbar-link(href="#", data-nav-link) about us
 
               li
                 a.navbar-link(href="#contact", data-nav-link) contact us
@@ -106,37 +96,15 @@ html(lang="en")
         section.hero#home
           .container
 
-            h2.h1.hero-title Journey to explore world
+            h2.h1.hero-title 
+              input
 
-            p.hero-text Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit class corporis nostra rem quos voluptatibus habitant? Fames, vivamus minim nemo enim, gravida lobortis quasi, eum.
+            p.hero-text Not really sure where to go next? Well, we can recommend you, your next tour, just search country or city!
 
             .btn-group
               button.btn.btn-primary Learn more
               button.btn.btn-secondary Book now
 
-        // TOUR SEARCH SECTION
-        section.tour-search
-          .container
-
-            form.tour-search-form(action="")
-
-              .input-wrapper
-                label.input-label(for="destination") Search Destination*
-                input(type="text", name="destination", id="destination", required, placeholder="Enter Destination", class="input-field")
-
-              .input-wrapper
-                label.input-label(for="people") Pax Number*
-                input(type="number", name="people", id="people", required, placeholder="No.of People", class="input-field")
-
-              .input-wrapper
-                label.input-label(for="checkin") Checkin Date**
-                input(type="date", name="checkin", id="checkin", required, class="input-field")
-
-              .input-wrapper
-                label.input-label(for="checkout") Checkout Date*
-                input(type="date", name="checkout", id="checkout", required, class="input-field")
-
-              button.btn.btn-secondary(type="submit") Inquire now
 
         // POPULAR DESTINATION SECTION
         section.popular#destination
@@ -144,9 +112,9 @@ html(lang="en")
 
             p.section-subtitle Uncover place
 
-            h2.h2.section-title Popular destination
+            h2.h2.section-title Popular Destinations
 
-            p.section-text Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
+            p.section-text Similar destinations you might also like.
 
             ul.popular-list
 
@@ -221,160 +189,6 @@ html(lang="en")
 
             button.btn.btn-primary More destintion
 
-        // PACKAGE SECTION
-        section.package#package
-          .container
-
-            p.section-subtitle Popular Packeges
-
-            h2.h2.section-title Checkout Our Packeges
-
-            p.section-text Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
-
-            ul.package-list
-
-              li
-                .package-card
-
-                  figure.card-banner
-                    img(src="/images/packege-1.jpg", alt="Experience The Great Holiday On Beach", loading="lazy")
-
-                  .card-content
-
-                    h3.h3.card-title Experience The Great Holiday On Beach
-
-                    p.card-text Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque, cras, aspernatur.
-
-                    ul.card-meta-list
-
-                      li.card-meta-item
-                        .meta-box
-                          ion-icon(name="time")
-                          p.text 7D/6N
-
-                      li.card-meta-item
-                        .meta-box
-                          ion-icon(name="people")
-                          p.text pax: 10
-
-                      li.card-meta-item
-                        .meta-box
-                          ion-icon(name="location")
-                          p.text Malaysia
-
-                  .card-price
-
-                    .wrapper
-
-                      p.reviews (25 reviews)
-
-                      .card-rating
-                        ion-icon(name="star")
-                        ion-icon(name="star")
-                        ion-icon(name="star")
-                        ion-icon(name="star")
-                        ion-icon(name="star")
-
-                    p.price $750
-                      span / per person
-
-                    button.btn.btn-secondary Book Now
-
-              li
-                .package-card
-
-                  figure.card-banner
-                    img(src="/images/packege-2.jpg", alt="Summer Holiday To The Oxolotan River", loading="lazy")
-
-                  .card-content
-
-                    h3.h3.card-title Summer Holiday To The Oxolotan River
-
-                    p.card-text Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque, cras, aspernatur.
-
-                    ul.card-meta-list
-
-                      li.card-meta-item
-                        .meta-box
-                          ion-icon(name="time")
-                          p.text 7D/6N
-
-                      li.card-meta-item
-                        .meta-box
-                          ion-icon(name="people")
-                          p.text pax: 10
-
-                      li.card-meta-item
-                        .meta-box
-                          ion-icon(name="location")
-                          p.text Malaysia
-
-                  .card-price
-
-                    .wrapper
-
-                      p.reviews (20 reviews)
-
-                      .card-rating
-                        ion-icon(name="star")
-                        ion-icon(name="star")
-                        ion-icon(name="star")
-                        ion-icon(name="star")
-                        ion-icon(name="star")
-
-                    p.price $520
-                      span / per person
-
-                    button.btn.btn-secondary Book Now
-
-              li
-                .package-card
-
-                  figure.card-banner
-                    img(src="/images/packege-3.jpg", alt="Santorini Island's Weekend Vacation", loading="lazy")
-
-                  .card-content
-
-                    h3.h3.card-title Santorini Island's Weekend Vacation
-
-                    p.card-text Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque, cras, aspernatur.
-
-                    ul.card-meta-list
-
-                      li.card-meta-item
-                        .meta-box
-                          ion-icon(name="time")
-                          p.text 7D/6N
-
-                      li.card-meta-item
-                        .meta-box
-                          ion-icon(name="people")
-                          p.text pax: 10
-
-                      li.card-meta-item
-                        .meta-box
-                          ion-icon(name="location")
-                          p.text Malaysia
-
-                  .card-price
-
-                    .wrapper
-
-                      p.reviews (40 reviews)
-
-                      .card-rating
-                        ion-icon(name="star")
-                        ion-icon(name="star")
-                        ion-icon(name="star")
-                        ion-icon(name="star")
-                        ion-icon(name="star")
-
-                    p.price $660
-                      span / per person
-
-                    button.btn.btn-secondary Book Now
-
-            button.btn.btn-primary View All Packages
 
         // GALLERY SECTION
         section.gallery#gallery
