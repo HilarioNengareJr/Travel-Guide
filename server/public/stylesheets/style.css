@@ -452,13 +452,10 @@ body {
   outline: 3px solid var(--bright-navy-blue);
 }
 
-.hero-title {
-  margin-bottom: 20px;
-}
-
 .hero-text {
   color: var(--white);
   font-size: var(--fs-5);
+  margin-top: 20px;
   margin-bottom: 40px;
 }
 

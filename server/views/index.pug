@@ -96,14 +96,14 @@ html(lang="en")
         section.hero#home
           .container
 
-            h2.h1.hero-title 
-              input
+            form.form#inputForm(action="/" method="POST") 
+              input(type='text' name='input' placeholder='Search a landmark, town, city, country...', autocomplete='false', spellcheck='false')
 
-            p.hero-text Not really sure where to go next? Well, we can recommend you, your next tour, just search country or city!
+              p.hero-text Not really sure where to go next? Well, we can recommend you, your next tour, just search country or city!
 
-            .btn-group
-              button.btn.btn-primary Learn more
-              button.btn.btn-secondary Book now
+              .btn-group
+                button.btn.btn-primary(type='submit') Learn more
+                button.btn.btn-secondary Book now
 
 
         // POPULAR DESTINATION SECTION
@@ -304,6 +304,7 @@ html(lang="en")
 
   // Custom JS link
   script(src="/javascripts/script.js")
+  script(src="/javascripts/inputForm.js")
 
   // Ionicon link
   script(type="module", src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js")
