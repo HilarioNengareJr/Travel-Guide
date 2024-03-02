@@ -4,7 +4,7 @@ const path = require('path');
 
 const app = express();
 
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,19 +19,40 @@ app.get('/', (req, res) => {
     res.render('index', { title: 'Express' });
 });
 
-app.post('/', (req, res) => {
+app.post('/', async (req, res) => {
     const inputData = req.body.input;
-    console.log(`successfully retrieved user input ${inputData}`)
-    res.json({success: true, message: "Successful"})
+    try {
+        console.log(`successfully retrieved user input ${inputData}`)
+        const results = await placeSearch(inputData);
+        console.log(results);
+        res.status(200).json({ success: true, message: "Successful" })
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, error: 'Internal server error.' })
+    }
 })
 
-async function getPlacesData(inputData){
+async function placeSearch(inputData) {
+    try {
+        const searchParams = new URLSearchParams({
+            near: inputData,
+        });
 
-    const clientId = 'ZW1PUYYK335DQCTOTT4WL255GABOXG4RHHI23KYA2XETKUTO';
-    const clientSecret = 'FPSZ2CUAPBQO5G0BXTL23ZNUFV04DBGEETJB2A1TIWTL2CZJ';
-    const apiUrl = '';
-
-
+        const results = await fetch(
+            `https://api.foursquare.com/v3/places/search?${searchParams}`,
+            {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: 'fsq3USQ8GOMl6egZ9eKt97OY2p9pOqLUrRP9ApHysvYk+5s=',
+                }
+            }
+        );
+        const data = await results.json();
+        return data;
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 module.exports = app;
