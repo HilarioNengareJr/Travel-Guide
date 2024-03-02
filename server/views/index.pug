@@ -96,12 +96,12 @@ html(lang="en")
         section.hero#home
           .container
 
-            form.form#inputForm(action="/" method="POST") 
+            form.form#inputForm(action="/" method="POST" enctype="application/x-www-form-urlencoded") 
               input(type='text' name='input' placeholder='Search a landmark, town, city, country...', autocomplete='false', spellcheck='false')
 
               p.hero-text Not really sure where to go next? Well, we can recommend you, your next tour, just search country or city!
 
-              .btn-group
+              div.btn-group
                 button.btn.btn-primary(type='submit') Learn more
                 button.btn.btn-secondary Book now
 
