@@ -6,10 +6,9 @@ document.getElementById('inputForm').addEventListener('submit', function (event)
     // Collecting form data 
     const formData = new URLSearchParams(new FormData(event.target));
 
-    // Sending form data
     fetch('/', {
-        method: 'POST', // Sending method type
-        body: formData, // Including form data in the request body
+        method: 'POST', 
+        body: formData,
     }).then(response => response.json()).then(data => {
         console.log(`Server's response ${JSON.stringify(data)}`);
     }).catch(error => {
