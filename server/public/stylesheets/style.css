@@ -444,7 +444,7 @@ body {
 }
 
 
-.hero input:is(:hover, :focus){
+.hero input:is(:hover, :focus) {
   outline: 3px solid var(--bright-navy-blue);
 }
 
@@ -538,10 +538,6 @@ body {
   overflow: hidden;
   border-radius: var(--radius-25);
   height: 430px;
-}
-
-.popular-card .card-img {
-  height: 100%;
 }
 
 .popular-card .card-img img {
@@ -1037,7 +1033,6 @@ address {
   }
 
   .section-text {
-    max-width: 60ch;
     margin-inline: auto;
   }
 
@@ -1069,6 +1064,9 @@ address {
   /**
    * POPULAR
    */
+  .popular-card .card-img {
+    height: 45%;
+  }
 
   .popular-list {
     display: grid;

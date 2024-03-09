@@ -2,12 +2,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cheerio = require('cheerio');
 const path = require('path');
-const fs = require('fs');
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const cors = require('cors');
+
 
 const app = express();
 
 // base url for wiki voyage
 const baseUrl = 'https://en.wikivoyage.org/w/api.php';
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -15,37 +18,39 @@ app.set('view engine', 'pug');
 
 // parsing incoming requests with json payloads
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors({
+    origin: '/',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+}));
 
 app.get('/', (req, res) => {
-    res.render('index', { title: 'Express' });
+    res.render('index', { title: 'Tour Guide' });
 });
 
 app.post('/', async (req, res) => {
     const inputData = req.body.input;
     try {
+
         const searchResults = await searchPlace(inputData);
 
         if (searchResults.length > 0) {
             const firstResult = searchResults[0];
             const pageTitle = firstResult.title;
-
             const pageContent = await fetchPageContent(pageTitle);
-            const jsonString = JSON.stringify(pageContent);
+            console.log('This is page content', pageContent);
 
-            fs.writeFile('data.json', jsonString, 'utf-8', (err) => {
-                if (err) {
-                    console.error(err);
-                    return res.status(500).json({ success: false, error: 'Error writing to file.' });
-                }
-                console.log('File has been written.');
-                res.status(200).json({ success: true, message: 'Successful' });
-            });
-
+            if (pageContent && Object.keys(pageContent).length > 0) {
+                res.render('index', { title: inputData, place: inputData, data: JSON.parse(JSON.stringify(pageContent)) });
+            } else {
+                console.log(`No search results for user input ${inputData}`);
+                res.status(404).render('index', { title: '404', data: '' });
+            }
         } else {
             console.log(`No search results for user input ${inputData}`);
-            res.status(404).json({ success: false, error: 'No search results found.' });
+            res.status(404).render('index', { title: '404', data: '' });
         }
     } catch (error) {
         console.error(error);
@@ -53,6 +58,19 @@ app.post('/', async (req, res) => {
     }
 });
 
+// Step 1: Searching for articles related to the location
+async function searchPlace(inputData) {
+    try {
+        const response = await fetch(`${baseUrl}?action=query&format=json&list=search&srsearch=${inputData}`);
+        const data = await response.json();
+        const searchResults = data.query.search;
+
+        return searchResults;
+    } catch (error) {
+        console.error(`Error occurred: ${error}`);
+        throw error;
+    }
+}
 
 // Step 1: Searching for articles related to the location
 async function searchPlace(inputData) {
