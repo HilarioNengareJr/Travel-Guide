@@ -1,5 +1,5 @@
 /server/apikey.txt
 /server/node_modules/
 /server/package-lock.json
-/package-lock.json
+package-lock.json
 /server/data.html
