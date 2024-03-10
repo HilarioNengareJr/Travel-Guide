@@ -8,6 +8,8 @@ const cors = require('cors');
 
 const app = express();
 
+const PORT = process.env.PORT || 5500;
+
 // base url for wiki voyage
 const baseUrl = 'https://en.wikivoyage.org/w/api.php';
 
@@ -153,5 +155,8 @@ const fetchPageContent = async (pageTitle) => {
 };
 
 
+app.listen(PORT, ()=>{
+    console.log(`Server is running on PORT ${PORT}`);
+})
 
 module.exports = app;
