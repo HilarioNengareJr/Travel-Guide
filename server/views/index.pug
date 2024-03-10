@@ -106,48 +106,48 @@ html(lang="en")
                 button.btn.btn-secondary Book now
 
 
-        if data && data.allBanners && data.allBanners.banners
-         // GALLERY SECTION
-        section.gallery#destination
-          .container
-
-            p.section-subtitle= place
-
-            h2.h2.section-title Details
-
-            p.section-text= data.paragraphs[1] + data.paragraphs[2]
-
-            h3.section-text Destinations in #{place}
-            ul.gallery-list
-              each landmark in data.landmarks
-                if landmark.name && landmark.nameHref
-                  li.gallery-item
-                    p.section-subtitle
-                      a(href='https://en.wikivoyage.org/' + landmark.nameHref)= landmark.name
-                    p.section-text= landmark.noteContent
-               
-        
-          // POPULAR DESTINATION SECTION
-          section.popular#gallery
+        if data && data.paragraphs && data.allBanners && data.allBanners.banners
+          // GALLERY SECTION
+          section.gallery#destination
             .container
-              p.section-subtitle Gallery of #{place}
-            
-              h2.h2.section-title Popular Destinations
 
-              p.section-text Popular Destinations Gallery of #{place}
+              p.section-subtitle= place
 
-              ul.popular-list
-                each banner in data.allBanners.banners
-                  li.popular-card
-                    figure.card-img
-                      img(src=banner.imgSrc, alt="Image", loading="lazy")
+              h2.h2.section-title Details
 
-                    .card-content
+              p.section-text= data.paragraphs[1] + data.paragraphs[2]
 
-                      .card-rating= place
+              h3.section-text Destinations in #{place}
+              ul.gallery-list
+                each landmark in data.landmarks
+                  if landmark.name && landmark.nameHref
+                    li.gallery-item
+                      p.section-subtitle
+                        a(href='https://en.wikivoyage.org/' + landmark.nameHref)= landmark.name
+                      p.section-text= landmark.noteContent
+                
+          
+            // POPULAR DESTINATION SECTION
+            section.popular#gallery
+              .container
+                p.section-subtitle Gallery of #{place}
+              
+                h2.h2.section-title Popular Destinations
 
-                      h3.h3.card-title
-                        a(href="#")= banner.caption
+                p.section-text Popular Destinations Gallery of #{place}
+
+                ul.popular-list
+                  each banner in data.allBanners.banners
+                    li.popular-card
+                      figure.card-img
+                        img(src=banner.imgSrc, alt="Image", loading="lazy")
+
+                      .card-content
+
+                        .card-rating= place
+
+                        h3.h3.card-title
+                          a(href="#")= banner.caption
 
                       
         // CALL TO ACTION SECTION

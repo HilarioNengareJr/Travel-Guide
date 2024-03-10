@@ -41,10 +41,10 @@ app.post('/', async (req, res) => {
             const pageTitle = firstResult.title;
             const pageContent = await fetchPageContent(pageTitle);
             console.log('This is page content', pageContent);
-
             if (pageContent && Object.keys(pageContent).length > 0) {
                 res.render('index', { title: inputData, place: inputData, data: JSON.parse(JSON.stringify(pageContent)) });
             } else {
+                
                 console.log(`No search results for user input ${inputData}`);
                 res.status(404).render('index', { title: '404', data: '' });
             }
