@@ -91,12 +91,14 @@
 
 .btn-primary {
   background: var(--bright-navy-blue);
+  border: 1px solid #ccc;
   border-color: var(--bright-navy-blue);
 }
 
 .btn-primary:is(:hover, :focus) {
   background: var(--yale-blue);
   border-color: var(--yale-blue);
+  color: var(--white);
 }
 
 .btn-secondary {
