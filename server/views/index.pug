@@ -28,14 +28,6 @@ html(lang="en")
       .header-top
         .container
 
-          a.helpline-box(href="tel:+905338502322")
-
-            .icon-box
-              ion-icon(name="call-outline")
-
-            .wrapper
-              p.helpline-title For Further Inquires :
-              p.helpline-number +905338502322
 
           .header-btn-group
 
@@ -45,19 +37,6 @@ html(lang="en")
       .header-bottom
         .container
 
-          ul.social-list
-
-            li
-              a.social-link(href="#")
-                ion-icon(name="logo-facebook")
-
-            li
-              a.social-link(href="#")
-                ion-icon(name="logo-twitter")
-
-            li
-              a.social-link(href="#")
-                ion-icon(name="logo-youtube")
 
           nav.navbar(data-navbar)
 
@@ -100,10 +79,6 @@ html(lang="en")
               input(type='text' name='input' placeholder='Search a landmark, town, city, country...', autocomplete='false', spellcheck='false')
 
               p.hero-text Not really sure where to go next? Well, we can recommend you, your next tour, just search country or city!
-
-              div.btn-group
-                button.btn.btn-primary(type='submit') Learn more
-                button.btn.btn-secondary Book now
 
 
         if data && data.paragraphs && data.allBanners && data.allBanners.banners
@@ -150,18 +125,6 @@ html(lang="en")
                           a(href="#")= banner.caption
 
                       
-        // CALL TO ACTION SECTION
-        section.cta#contact
-          .container
-
-            .cta-content
-              p.section-subtitle Call To Action
-
-              h2.h2.section-title Ready For Unforgatable Travel. Remember Us!
-
-              p.section-text Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
-
-            button.btn.btn-secondary Contact Us !
 
     // FOOTER
     footer.footer
@@ -199,15 +162,6 @@ html(lang="en")
 
                 address 3146 Kantara, Cyprus
 
-          .footer-form
-
-            p.form-text Subscribe our newsletter for more update & news !!
-
-            form.form-wrapper(action="")
-
-              input(type="email", name="email", class="input-field", placeholder="Enter Your Email", required)
-
-              button.btn.btn-secondary(type="submit") Subscribe
 
       .footer-bottom
         .container
