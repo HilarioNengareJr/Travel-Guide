@@ -364,10 +364,6 @@
 .hero input {
   width: 80%;
   margin-inline: auto;
-  outline: none;
-  border: none;
-  background-color: var(--white);
-  border-radius: var(--radius-15);
   font-size: var(--fs-4);
   padding: 15px;
   font-weight: calc(var(--fw-500) - 200);
