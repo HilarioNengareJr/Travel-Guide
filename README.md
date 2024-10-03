@@ -1,34 +1,44 @@
-# Travel Guide
+# Tour Guide App
 
-## About
+## Overview
 
-Travel Guide is exactly what its name suggests—a web service meant to bring the world closer to users. The site utilizes the Wikivoyage API, one of many wiki APIs, to retrieve information on tourist attractions based on user queries placed through an input form. The service uses the Pug view engine to display data on a single page.
+The Tour Guide App is a web application designed to help users explore and discover landmarks, towns, cities, and countries. It provides a user-friendly interface to search for places, view details, and pin favorite locations.
 
-## Screenshots of App
+## Features
 
-<br/>
+- **Search**: Search for landmarks, towns, cities, and countries.
+- **Pin Favorites**: Pin favorite places to a sidebar for quick access.
+- **Toggle Pins**: Toggle pins on and off for each location.
 
-### Landing Page
+## Installation
 
-![image](https://github.com/HilarioNengareJr/Travel-Guide/assets/38634516/489b75f3-2c89-40cf-8548-353cac9ebfa5)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/tour-guide-app.git
+   ```
 
-<br/>
+2. Install dependencies:
+   ```bash
+   npm install
+   cd server
+   npm install
+   ```
 
-### Details Section
-![image](https://github.com/HilarioNengareJr/Travel-Guide/assets/38634516/c7a1a09a-6d3b-486c-8443-c3035cc36f06)
+3. Start the server:
+   ```bash
+   npm start
+   ```
 
-<br/>
+## Usage
 
-### Destinations Section
-![image](https://github.com/HilarioNengareJr/Travel-Guide/assets/38634516/90f8b043-6852-4790-87a7-809d72eaaebb)
+1. Open your browser and navigate to `http://localhost:5500`.
+2. Use the search bar to find places.
+3. Pin your favorite places by clicking the pin icon next to each location.
 
-<br/>
+## Contributing
 
-### CTA Section
-![image](https://github.com/HilarioNengareJr/Travel-Guide/assets/38634516/bee68895-1bff-4ce3-bba4-90cbed766470)
+Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) before getting started.
 
-<br/>
+## License
 
-### Footer Section
-![image](https://github.com/HilarioNengareJr/Travel-Guide/assets/38634516/e7f700c7-5e8f-4643-a7f0-705e03f9c9fb)
-
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
