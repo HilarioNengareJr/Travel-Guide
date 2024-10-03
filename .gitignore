@@ -40,3 +40,9 @@ server/public/images/
 !/server/public/favicon.svg
 !/server/public/javascripts/
 !/server/public/stylesheets/
+
+# Optional: Ignore all files in the public directory except for specific ones
+/server/public/*
+!/server/public/favicon.svg
+!/server/public/javascripts/
+!/server/public/stylesheets/
