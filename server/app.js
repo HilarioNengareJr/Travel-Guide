@@ -44,7 +44,7 @@ app.post('/', async (req, res) => {
             const pageContent = await fetchPageContent(pageTitle);
             console.log('This is page content', pageContent);
             if (pageContent && Object.keys(pageContent).length > 0) {
-                res.render('index', { title: inputData, place: inputData, data: JSON.parse(JSON.stringify(pageContent)) });
+                res.render('index', { title: inputData, place: inputData, data: { sites: pageContent.sites, embassies: pageContent.embassies, airlines: pageContent.airlines } });
             } else {
                 
                 console.log(`No search results for user input ${inputData}`);
@@ -52,7 +52,7 @@ app.post('/', async (req, res) => {
             }
         } else {
             console.log(`No search results for user input ${inputData}`);
-            res.status(404).render('index', { title: '404', data: '' });
+            res.status(404).render('index', { title: '404', data: { sites: '', embassies: '', airlines: '' } });
         }
     } catch (error) {
         console.error(error);
@@ -147,7 +147,7 @@ const fetchPageContent = async (pageTitle) => {
             return { name, link, address, phone };
         }).get() : [];
 
-        return { allBanners, paragraphs, landmarks, embassies, airlines };
+        return { sites: { allBanners, paragraphs, landmarks }, embassies, airlines };
     } catch (error) {
         console.error('Error fetching page content:', error.message);
         throw error;
