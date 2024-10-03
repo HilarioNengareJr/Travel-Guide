@@ -10,6 +10,25 @@ The Tour Guide App is a web application designed to help users explore and disco
 - **Pin Favorites**: Pin favorite places to a sidebar for quick access.
 - **Toggle Pins**: Toggle pins on and off for each location.
 
+## Server Logic
+
+The server logic is implemented in `app.js`. The server uses Express.js to handle HTTP requests and responses. It interacts with the Wikivoyage API to fetch data about places. The server handles:
+
+- **Home Route**: Renders the main page with a search form.
+- **Search Route**: Handles POST requests from the search form, fetches search results from the Wikivoyage API, and renders the main page with the search results.
+- **Wiki Route**: Fetches detailed content for a specific page title from the Wikivoyage API and renders the main page with the detailed content.
+
+The server also uses Cheerio to parse HTML content fetched from the Wikivoyage API and extract relevant information such as images, paragraphs, landmarks, embassies, and airlines.
+
+## Tech Stack
+
+- **Node.js**: JavaScript runtime environment.
+- **Express.js**: Web application framework for Node.js.
+- **Cheerio**: Fast, flexible, and lean implementation of core jQuery designed specifically for the server.
+- **Pug**: Template engine for rendering HTML.
+- **CSS**: Styling the web pages.
+- **JavaScript**: Client-side scripting for interactivity.
+
 ## Installation
 
 1. Clone the repository:
