@@ -36,27 +36,21 @@ html(lang="en")
                     button.btn.btn-primary(type='submit') Search
               tr
                 td
-                  if data && data.sites && data.sites.paragraphs && data.sites.allBanners && data.sites.allBanners.banners
-                    // GALLERY SECTION
-                    section.gallery#destination
-                      .container
-                        p.section-subtitle= place
-                        h2.h2.section-title Details
-                        p.section-text= data.sites.paragraphs[1] + data.sites.paragraphs[2]
-                        h3.section-text Destinations in #{place}
-                        ul.gallery-list
-                          each landmark in data.sites.landmarks
-                            if landmark.name && landmark.nameHref
-                              li.gallery-item
-                                p.section-subtitle
-                                  a(href='https://en.wikivoyage.org/' + landmark.nameHref)= landmark.name
-                                p.section-text= landmark.noteContent
-                  if data && data.embassies
+                  if data
+                    each paragraph in data.paragraphs
+                      p= paragraph
+                    each banner in data.banners
+                      figure
+                        img(src=banner.imgSrc, alt=banner.caption)
+                        figcaption= banner.caption
+                    each landmark in data.landmarks
+                      .landmark
+                        h3= landmark.name
+                        p= landmark.noteContent
                     each embassy in data.embassies
                       .embassy
                         h3= embassy.name
                         p= embassy.noteContent
-                  if data && data.airlines
                     each airline in data.airlines
                       .airline
                         h3= airline.name
