@@ -21,6 +21,11 @@ html(lang="en")
 
   body#top
 
+    // FAVORITE PLACES SIDEBAR
+    aside.favorite-places
+      h2 Favorite Places
+      ul#favorite-list
+
     // MAIN CONTENT
     main
       article
@@ -49,12 +54,14 @@ html(lang="en")
                         .landmark
                           h3
                             a(href=landmark.nameHref)= landmark.name
+                            button.pin-btn(data-name=landmark.name) 📌
                           p= landmark.noteContent
                     if data.embassies
                       each embassy in data.embassies
                         .embassy
                           h3
                             a(href=embassy.nameHref)= embassy.name
+                            button.pin-btn(data-name=embassy.name) 📌
                           p= embassy.noteContent
                     if data.airlines
                       each airline in data.airlines
