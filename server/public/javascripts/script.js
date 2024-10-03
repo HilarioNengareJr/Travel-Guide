@@ -38,9 +38,11 @@ window.addEventListener("scroll", function () {
   if (window.scrollY >= 200) {
     header.classList.add("active");
     goTopBtn.classList.add("active");
+    document.querySelector('.hero input').classList.add("fixed-search");
   } else {
     header.classList.remove("active");
     goTopBtn.classList.remove("active");
+    document.querySelector('.hero input').classList.remove("fixed-search");
   }
 
 });
