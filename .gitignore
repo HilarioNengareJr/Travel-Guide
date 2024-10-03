@@ -23,9 +23,20 @@ build/
 .DS_Store
 Thumbs.db
 
+# Aider-generated files
+.aider.chat.history.md
+.aider.input.history
+.aider.tags.cache.v3/
+
+# Dependency lock files
+package-lock.json
+server/package-lock.json
+
+# Images folder
+server/public/images/
+
 # Optional: Ignore all files in the public directory except for specific ones
 /server/public/*
 !/server/public/favicon.svg
-!/server/public/images/
 !/server/public/javascripts/
 !/server/public/stylesheets/
