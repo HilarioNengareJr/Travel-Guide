@@ -24,6 +24,29 @@ const navToggleEvent = function (elem) {
 navToggleEvent(navElemArr);
 navToggleEvent(navLinks);
 
+// Function to handle pinning places
+const pinPlace = function (elem) {
+  const favoriteList = document.getElementById('favorite-list');
+
+  elem.forEach(pinBtn => {
+    pinBtn.addEventListener('click', function () {
+      const placeName = this.getAttribute('data-name');
+      const placeLink = this.parentElement.querySelector('a').getAttribute('href');
+
+      // Check if the place is already pinned
+      if (!favoriteList.querySelector(`[data-name="${placeName}"]`)) {
+        const listItem = document.createElement('li');
+        listItem.setAttribute('data-name', placeName);
+        listItem.innerHTML = `<a href="${placeLink}">${placeName}</a>`;
+        favoriteList.appendChild(listItem);
+      }
+    });
+  });
+};
+
+// Call the pinPlace function with all pin buttons
+pinPlace(document.querySelectorAll('.pin-btn'));
+
 
 
 /**
