@@ -1310,22 +1310,44 @@ address {
 
 }
 /* NAVBAR */
-.navbar {
-  position: sticky;
+.navbar, .favorite-places {
+  position: fixed;
   top: 0;
   background: var(--gunmetal);
   color: var(--white);
   padding: 10px 0;
   z-index: 1000;
+  width: 100%;
 }
 
-.navbar .container {
+.navbar .container, .favorite-places .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar h1 {
+.navbar h1, .favorite-places h2 {
   font-size: var(--fs-3);
   margin: 0;
+  color: var(--white);
+}
+
+.favorite-places {
+  top: 60px; /* Adjust based on navbar height */
+  width: 250px; /* Adjust based on sidebar width */
+  padding: 10px;
+}
+
+.favorite-places ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.favorite-places ul li {
+  margin-bottom: 10px;
+}
+
+.favorite-places ul li a {
+  color: var(--white);
+  text-decoration: none;
 }
