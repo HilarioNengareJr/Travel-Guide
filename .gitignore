@@ -3,3 +3,4 @@
 /server/package-lock.json
 package-lock.json
 /server/data.html
+.aider*
