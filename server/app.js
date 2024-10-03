@@ -123,8 +123,14 @@ const fetchPageContent = async (pageTitle) => {
 
         // Grabbing embassies section
         const embassySection = $('span.mw-headline:contains("Embassies")').closest('ul');
-        const embassies = embassySection.length > 0 ? embassySection.find('li').map(async (index, element) => {
-            return await extractEmbassyInfo($(element));
+        const embassies = embassySection.length > 0 ? embassySection.find('li').map((index, element) => {
+            const nameElement = $(element).find('.listing-name a');
+            const name = nameElement.text();
+            const nameHref = nameElement.attr('href');
+            const noteElement = $(element).find('.note.listing-content');
+            const noteContent = noteElement.text().trim();
+
+            return { name, nameHref, noteContent };
         }).get() : [];
 
         // Grabbing transport details section
