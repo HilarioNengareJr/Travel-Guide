@@ -1336,18 +1336,22 @@ address {
   top: 60px; /* Adjust based on navbar height */
   width: 250px; /* Adjust based on sidebar width */
   padding: 10px;
+  right: 0; /* Position the sidebar to the right */
 }
 
-.favorite-places ul {
-  list-style-type: none;
+.favorite-places ol {
+  list-style-type: decimal; /* Use ordered list style */
   padding: 0;
+  margin: 0;
+  font-family: inherit; /* Inherit font */
 }
 
-.favorite-places ul li {
+.favorite-places ol li {
   margin-bottom: 10px;
 }
 
-.favorite-places ul li a {
+.favorite-places ol li a {
   color: var(--white);
   text-decoration: none;
+  font-family: inherit; /* Inherit font */
 }
