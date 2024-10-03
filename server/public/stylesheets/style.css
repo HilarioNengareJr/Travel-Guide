@@ -81,6 +81,7 @@
 
 .btn {
   color: var(--white);
+  margin-top: 10px;
   text-transform: uppercase;
   font-size: var(--fs-5);
   border-radius: 100px;
@@ -134,7 +135,7 @@
 .h3 {
   font-size: var(--fs-3);
   font-weight: var(--fw-700);
-}
+} 
 
 .section-subtitle {
   color: var(--bright-navy-blue);
@@ -157,10 +158,6 @@
   color: var(--black-coral);
   font-size: var(--fs-5);
 }
-
-
-
-
 
 /*-----------------------------------*\
  * #HEADER
@@ -355,7 +352,6 @@
 \*-----------------------------------*/
 
 .hero {
- 
   display: grid;
   place-items: center;
   min-height: 600px;
@@ -369,11 +365,6 @@
   font-size: var(--fs-4);
   padding: 15px;
   font-weight: calc(var(--fw-500) - 200);
-}
-
-
-.hero input:is(:hover, :focus) {
-  outline: 3px solid var(--bright-navy-blue);
 }
 
 .hero input[placeholder] {
@@ -396,10 +387,6 @@
   align-items: center;
   gap: 10px;
 }
-
-
-
-
 
 /*-----------------------------------*\
  * #TOUR SEARCH
