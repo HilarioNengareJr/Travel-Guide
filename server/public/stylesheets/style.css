@@ -377,6 +377,7 @@
   color: var(--white);
   padding: 20px;
   overflow-y: auto;
+  border-left: 5px solid var(--bright-navy-blue);
 }
 
 .favorite-places h2 {
