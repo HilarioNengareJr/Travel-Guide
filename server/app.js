@@ -32,6 +32,22 @@ app.get('/', (req, res) => {
     res.render('index', { title: 'Tour Guide' });
 });
 
+app.get('/wiki/:pageTitle', async (req, res) => {
+    const pageTitle = req.params.pageTitle;
+    try {
+        const pageContent = await fetchPageContent(pageTitle);
+        if (pageContent && Object.keys(pageContent).length > 0) {
+            res.render('index', { title: pageTitle, place: pageTitle, data: JSON.parse(JSON.stringify(pageContent)) });
+        } else {
+            console.log(`No content found for page title ${pageTitle}`);
+            res.status(404).render('index', { title: '404', data: '' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, error: error.message || 'Internal server error.' });
+    }
+});
+
 app.post('/', async (req, res) => {
     const inputData = req.body.input;
     try {
