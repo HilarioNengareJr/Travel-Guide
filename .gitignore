@@ -46,3 +46,4 @@ server/public/images/
 !/server/public/favicon.svg
 !/server/public/javascripts/
 !/server/public/stylesheets/
+.aider*
