@@ -73,5 +73,7 @@ const sidebarToggle = document.querySelector('.sidebar-toggle');
 const favoritePlaces = document.querySelector('.favorite-places');
 
 sidebarToggle.addEventListener('click', () => {
-  favoritePlaces.classList.toggle('active');
+  if (window.innerWidth > 768) {
+    favoritePlaces.classList.toggle('active');
+  }
 });
