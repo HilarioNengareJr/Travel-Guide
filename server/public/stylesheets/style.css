@@ -1337,6 +1337,25 @@ address {
   width: 250px; /* Adjust based on sidebar width */
   padding: 10px;
   right: 0; /* Position the sidebar to the right */
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+.favorite-places.active {
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .favorite-places {
+    width: 100%;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  .favorite-places.active {
+    transform: translateX(0);
+  }
 }
 
 .favorite-places ol {

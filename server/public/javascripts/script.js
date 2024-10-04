@@ -69,3 +69,9 @@ window.addEventListener("scroll", function () {
   }
 
 });
+const sidebarToggle = document.querySelector('.sidebar-toggle');
+const favoritePlaces = document.querySelector('.favorite-places');
+
+sidebarToggle.addEventListener('click', () => {
+  favoritePlaces.classList.toggle('active');
+});
