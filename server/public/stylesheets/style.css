@@ -1347,14 +1347,7 @@ address {
 
 @media (max-width: 768px) {
   .favorite-places {
-    width: 100%;
-    top: 0;
-    right: 0;
-    transform: translateX(100%);
-  }
-
-  .favorite-places.active {
-    transform: translateX(0);
+    display: none;
   }
 }
 
